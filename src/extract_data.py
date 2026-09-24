@@ -25,8 +25,7 @@ def main():
             filtered_df = data_extraction(file, pollen_taxa)
             #Append Yearly Taxa Counts to Temp DB
             location_df = pd.concat([filtered_df, location_df])
-        #Once all years added, export final location dataframe
-        print(location_df.shape)
+        #Export final location dataframe
         location_df.to_csv(f"data/processed/{location}_allyears.csv", index=False)
 
 
@@ -35,7 +34,8 @@ def data_extraction(df, taxa):
     #Create Data Extraction function that takes full dataframe of Hirst counts at a specific site and returns filtered pandas dataframe
     columns = ["Date"] + taxa
     filtered_df = df[columns]
+    #Swap all -1 values for 0 (ignores recording faults)
+    filtered_df = filtered_df.replace(-1, 0)
     return filtered_df
 
-main()
     
