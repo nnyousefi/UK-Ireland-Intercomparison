@@ -53,6 +53,8 @@ def main():
             #Create yearly metrics Dataframe
             yearly_metrics_df = pd.DataFrame(yearly_metrics)
             yearly_metrics_df.index.name = "Metric"
+            yearly_metrics_df.loc["start_date"] = pd.to_datetime(yearly_metrics_df.loc["start_date"]).dt.strftime("%d-%m-%Y")
+            yearly_metrics_df.loc["end_date"] = pd.to_datetime(yearly_metrics_df.loc["end_date"]).dt.strftime("%d-%m-%Y")
             yearly_metrics_df.to_csv(f"data/processed/yearly_metrics/{location}_{year}_metrics.csv")
 
                 
