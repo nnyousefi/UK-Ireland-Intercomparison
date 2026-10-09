@@ -1,0 +1,9 @@
+Metric,Betu,Poac
+start_date,2020-04-10 00:00:00,2020-05-25 00:00:00
+end_date,2020-05-06 00:00:00,2020-08-06 00:00:00
+duration,26,73
+APIn,276,1222
+SPIn,251,1106
+peak_conc,57,80
+peak_date,2020-04-10,2020-06-15
+high_days,0,3

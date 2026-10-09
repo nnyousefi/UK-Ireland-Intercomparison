@@ -6,7 +6,7 @@ def main():
     ##Years of Interest
     years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
     ##Sites of Interest
-    locations = ["Invergowrie", "Leicester", "Cardiff"]
+    locations = ["Invergowrie", "Leicester", "Cardiff","Belfast"]
     ##Taxa of Interest 
     pollen_taxa = ["Betu", "Poac"]
 
@@ -38,4 +38,4 @@ def data_extraction(df, taxa):
     filtered_df = filtered_df.replace(-1, 0)
     return filtered_df
 
-    
+main()    
