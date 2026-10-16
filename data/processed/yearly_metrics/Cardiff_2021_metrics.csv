@@ -4,6 +4,6 @@ end_date,28-04-2021,21-07-2021
 duration,28,42
 APIn,3581,4448
 SPIn,3269,4050
-peak_conc,722,258
+peak_conc,722.0,258.0
 peak_date,2021-04-20,2021-06-29
 high_days,10,27

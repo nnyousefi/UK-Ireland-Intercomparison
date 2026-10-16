@@ -4,6 +4,6 @@ end_date,02-05-2018,09-07-2018
 duration,16,41
 APIn,2365,4619
 SPIn,2148,4193
-peak_conc,530,336
+peak_conc,530.0,336.0
 peak_date,2018-04-18,2018-06-06
 high_days,5,28

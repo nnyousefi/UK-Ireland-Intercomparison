@@ -4,6 +4,6 @@ end_date,08-05-2023,28-07-2023
 duration,24,61
 APIn,573,995
 SPIn,528,900
-peak_conc,177,71
+peak_conc,177.0,71.0
 peak_date,2023-04-21,2023-06-15
 high_days,1,4

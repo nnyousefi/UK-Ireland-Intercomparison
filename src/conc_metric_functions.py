@@ -34,7 +34,7 @@ def season_metrics(df, taxon, integral_option):
                 "duration": duration
             }
 
-    #Check to see if user wants to include APIn
+    #Check to see if user wants to include APIn, SPIn or Both
     if integral_option == "APIn":
         results["APIn"] = APIn
         return results
@@ -51,12 +51,11 @@ def season_metrics(df, taxon, integral_option):
         raise ValueError(
             "integral_option must be 'APIn', 'SPIn', 'both' or None"
         )
-            
-    return results
+    
 
 def peak_metrics(df, taxon, high_days_threshold):
     #Identify peak concentration
-    peak_conc = int(df[taxon].max())
+    peak_conc = df[taxon].max()
     peak_date = df.loc[df[taxon] == peak_conc, "Date"].iloc[0].date()
     peak_days = df.loc[df[taxon] >= high_days_threshold]
     total_high_days = len(peak_days)
@@ -69,4 +68,5 @@ def peak_metrics(df, taxon, high_days_threshold):
 
     return results
 
-
+if __name__ == "__main__":
+    main()

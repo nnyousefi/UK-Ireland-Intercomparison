@@ -1,15 +1,15 @@
 #Import Modules
 import pandas as pd
 import numpy
-from conc_metric_calculator import season_metrics, peak_metrics
+from conc_metric_functions import season_metrics, peak_metrics
 
 def main():
 
     #Identify Desired Extracted Qualities
     ##Years of Interest
-    years = ["2018", "2019", "2020", "2021", "2022", "2023", "2024", "2025"]
+    years = ["2018", "2019", "2020", "2021", "2023", "2024", "2025"]
     ##Sites of Interest
-    locations = ["Invergowrie", "Leicester", "Cardiff", "Belfast"]
+    locations = ["Invergowrie", "Leicester", "Cardiff", "Belfast", "Dublin"]
     ##Taxa of Interest 
     taxa = ["Betu", "Poac"]
 

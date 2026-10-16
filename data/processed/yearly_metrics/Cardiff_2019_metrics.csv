@@ -4,6 +4,6 @@ end_date,23-04-2019,25-07-2019
 duration,24,54
 APIn,2643,4040
 SPIn,2406,3675
-peak_conc,315,248
+peak_conc,315.0,248.0
 peak_date,2019-04-10,2019-06-27
 high_days,10,29
