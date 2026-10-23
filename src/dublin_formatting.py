@@ -41,7 +41,6 @@ def main():
         #Extract taxa and add to master dataframe
         #Check if current file has multiple years
         years = data["Date"].dt.year.dropna().astype(int).unique()
-        print(years)
         for year in years:
         
             ##Extract data

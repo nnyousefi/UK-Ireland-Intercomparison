@@ -1,0 +1,11 @@
+,taxon,site_1,site_2,method,n,correlation,p_value,lower_bound,upper_bound
+0,Betu,Belfast,Cardiff,spearman,7,0.2882999880625789,0.5306506599466652,,
+1,Betu,Belfast,Dublin,spearman,7,0.1785714285714286,0.7016579425162728,,
+2,Betu,Belfast,Invergowrie,spearman,7,0.0,1.0,,
+3,Betu,Belfast,Leicester,spearman,7,0.28571428571428575,0.5345092286010408,,
+4,Betu,Cardiff,Dublin,spearman,7,0.8108437164260032,0.026916328843161984,,
+5,Betu,Cardiff,Invergowrie,spearman,7,-0.07207499701564472,0.877959250822513,,
+6,Betu,Cardiff,Leicester,spearman,7,0.9549937104572924,0.0008055353363017616,,
+7,Betu,Dublin,Invergowrie,spearman,7,0.03571428571428572,0.9394082054712856,,
+8,Betu,Dublin,Leicester,spearman,7,0.7857142857142859,0.03623846267982714,,
+9,Betu,Invergowrie,Leicester,spearman,7,0.03571428571428572,0.9394082054712856,,
