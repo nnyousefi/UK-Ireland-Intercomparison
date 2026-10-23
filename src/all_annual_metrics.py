@@ -13,6 +13,8 @@ def main():
     ##Taxa of Interest 
     taxa = ["Betu", "Poac"]
 
+    #Create annual metrics df
+    annual_metrics = pd.DataFrame()
 
     for location in locations:
         #Identify file path
@@ -26,8 +28,6 @@ def main():
             #Filter concentration data by year
             yearly_conc_data = conc_data[
                 conc_data["Date"].dt.year == int(year)]
-            #Create empty dictionary for yearly metrics results
-            yearly_metrics = {}
             #Loop by taxa
             for taxon in taxa:
                 #Identify threshold for "High Days"
@@ -46,21 +46,30 @@ def main():
                     **season_data,
                     **peak_data
                 }
-                combined_metrics.pop("taxon", None)
+                combined_metrics["year"] = year
+                combined_metrics["site"] = location
+                #combined_metrics_df = pd.DataFrame.from_dict(combined_metrics)
+                combined_metrics = pd.DataFrame(combined_metrics, index=[0])
 
-                #Merge yearly metrics tables to include both taxa
-                yearly_metrics[taxon] = combined_metrics
-            #Create yearly metrics Dataframe
-            yearly_metrics_df = pd.DataFrame(yearly_metrics)
-            yearly_metrics_df.index.name = "Metric"
-            yearly_metrics_df.loc["start_date"] = pd.to_datetime(yearly_metrics_df.loc["start_date"]).dt.strftime("%d-%m-%Y")
-            yearly_metrics_df.loc["end_date"] = pd.to_datetime(yearly_metrics_df.loc["end_date"]).dt.strftime("%d-%m-%Y")
-            yearly_metrics_df.to_csv(f"data/processed/yearly_metrics/{location}_{year}_metrics.csv")
+                #Merge combined metrics per site and year into master df
+                annual_metrics = pd.concat([annual_metrics, combined_metrics], ignore_index=True)
 
-                
-            
+    annual_metrics = annual_metrics.reindex(columns=["site", "year", "taxon", "start_date", "end_date", "peak_date", "peak_conc", "duration", "APIn", "SPIn"])
 
-            
+    #Code for splitting up year from month-day
+    """
+    annual_metrics["peak_date"] = pd.to_datetime(annual_metrics["peak_date"]) 
+    print(annual_metrics.info())
+    date_cols = ["start_date", "end_date", "peak_date"]
+    for col in date_cols:
+        annual_metrics[col] = annual_metrics[col].dt.strftime("%m-%d")
+    print(annual_metrics.head())
+    """ 
+
+    #Export
+    annual_metrics.to_csv(f"data/processed/yearly_metrics/all_annual_metrics.csv", index=False)
+    
+      
 
             
 

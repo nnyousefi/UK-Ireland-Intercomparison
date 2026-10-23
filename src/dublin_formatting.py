@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from extract_data import data_extraction
 import os
 
@@ -20,31 +21,38 @@ def main():
             data = pd.read_excel(file_path)
         elif filename.endswith(".csv"):
             data = pd.read_csv(file_path)
+        else:
+            raise ValueError(f"No date column found in {filename}")
 
         ##Format Column Names in Each File
         #If the date column is already named correctly
         if "Date" in data.columns:
             #Reformat Only
-            data["Date"] = pd.to_datetime(data["Date"], format="mixed").dt.strftime("%Y-%m-%d")
+            data["Date"] = pd.to_datetime(data["Date"], format="mixed")
         #If date column is not named correctly
         elif "Day" in data.columns:
             #Create new, correctly named column and then reformat
-            data["Date"] = pd.to_datetime(data["Day"], format="mixed").dt.strftime("%Y-%m-%d")
+            data["Date"] = pd.to_datetime(data["Day"], format="mixed")
+        #Dataset cleaning
         #Capitalise columns
         data.columns = data.columns.str.capitalize()
 
-        #Extract taxa and add to master dataframe\
-        ##Extract data
-        filtered_df = data_extraction(data, taxa)
-        ##Shorten column names (match that of MetOffice data)
-        filtered_df.columns = filtered_df.columns.str[:4]
-        location_df = pd.concat([filtered_df, location_df])
 
-    #Clean resultant dataframe
-    #Remove empty rows (rows missing a date)
-    location_df.dropna(how="all", inplace=True)
-    #Replace empty counts with Os
-    location_df = location_df.fillna("0")
+        #Extract taxa and add to master dataframe
+        #Check if current file has multiple years
+        years = data["Date"].dt.year.dropna().astype(int).unique()
+        print(years)
+        for year in years:
+        
+            ##Extract data
+            filtered_df = data_extraction(data, taxa, year)
+            ##Clean date column
+            filtered_df["Date"] = filtered_df["Date"].dt.strftime("%Y-%m-%d")
+            ##Shorten column names (match that of MetOffice data)
+            filtered_df.columns = filtered_df.columns.str[:4]
+            location_df = pd.concat([filtered_df, location_df])
+
+
     #Export final dataframe
     location_df.to_csv(f"data/processed/Dublin_allyears.csv", index=False)
 
