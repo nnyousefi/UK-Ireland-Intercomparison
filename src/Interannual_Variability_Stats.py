@@ -19,6 +19,7 @@ IAV_stats = grouped_annual_metrics.agg({
     "duration": ["mean", "std"],
     "start_date_DOY": "std"
 })
+
 #Reformat column names
 IAV_stats.columns = [f"{stat}_{metric}" for metric, stat in IAV_stats.columns]
 IAV_stats.reset_index(inplace=True)
@@ -31,11 +32,13 @@ IAV_stats["%CV_duration"] = (IAV_stats["std_duration"]/IAV_stats["mean_duration"
 IAV_stats = IAV_stats.reindex(columns = ["site", "taxon", 
                               "mean_APIn", "std_APIn", "%CV_APIn",
                               "mean_duration", "std_duration", "%CV_duration",
-                              "std_start_DOY"])
+                              "std_start_date_DOY"])
 
 #Separate stats by taxa
 betu_IAV = IAV_stats[IAV_stats["taxon"] == "Betu"].copy()
 poac_IAV = IAV_stats[IAV_stats["taxon"] == "Poac"].copy()
+
+print(betu_IAV.head())
 
 #Export stats
 betu_IAV.to_csv(f"data/processed/analysis/IAV/betu_IAV.csv", index=False)
