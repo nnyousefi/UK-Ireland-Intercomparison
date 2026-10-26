@@ -31,7 +31,7 @@ IAV_stats["%CV_duration"] = (IAV_stats["std_duration"]/IAV_stats["mean_duration"
 IAV_stats = IAV_stats.reindex(columns = ["site", "taxon", 
                               "mean_APIn", "std_APIn", "%CV_APIn",
                               "mean_duration", "std_duration", "%CV_duration",
-                              "std_start_date"])
+                              "std_start_DOY"])
 
 #Separate stats by taxa
 betu_IAV = IAV_stats[IAV_stats["taxon"] == "Betu"].copy()
