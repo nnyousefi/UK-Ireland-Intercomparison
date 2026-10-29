@@ -1,9 +1,9 @@
 Metric,Betu,Poac
-start_date,04-03-2023,14-05-2023
-end_date,05-12-2023,27-07-2023
-duration,276,74
-APIn,5691,3469
-SPIn,5307,1997
-peak_conc,966.0353535,304.9242424
-peak_date,2023-04-21,2023-12-06
-high_days,19,22
+start_date,04-05-2023,15-05-2023
+end_date,05-08-2023,26-07-2023
+duration,93,72
+APIn,5109,2690
+SPIn,646,1951
+peak_conc,966.0353535,235.9848485
+peak_date,2023-04-21,2023-06-13
+high_days,20,18

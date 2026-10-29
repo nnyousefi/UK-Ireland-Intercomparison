@@ -4,6 +4,6 @@ end_date,03-05-2020,31-07-2020
 duration,30,60
 APIn,602,1324
 SPIn,569,1202
-peak_conc,72,156
+peak_conc,72.0,156.0
 peak_date,2020-04-21,2020-06-20
 high_days,0,5

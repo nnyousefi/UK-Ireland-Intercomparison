@@ -32,7 +32,7 @@ def main():
             for taxon in taxa:
                 #Identify threshold for "High Days"
                 if taxon == "Betu":
-                    high_days_threshold = 90
+                    high_days_threshold = 80
                 elif taxon == "Poac":
                     high_days_threshold = 50
 

@@ -4,6 +4,6 @@ end_date,18-04-2025,12-07-2025
 duration,10,41
 APIn,250,1487
 SPIn,236,1343
-peak_conc,66,170
+peak_conc,66.0,170.0
 peak_date,2025-04-12,2025-06-11
 high_days,0,10

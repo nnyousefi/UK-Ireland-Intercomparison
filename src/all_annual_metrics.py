@@ -32,7 +32,7 @@ def main():
             for taxon in taxa:
                 #Identify threshold for "High Days"
                 if taxon == "Betu":
-                    high_days_threshold = 90
+                    high_days_threshold = 80
                 elif taxon == "Poac":
                     high_days_threshold = 50
 
@@ -54,7 +54,7 @@ def main():
                 #Merge combined metrics per site and year into master df
                 annual_metrics = pd.concat([annual_metrics, combined_metrics], ignore_index=True)
 
-    annual_metrics = annual_metrics.reindex(columns=["site", "year", "taxon", "start_date", "end_date", "peak_date", "peak_conc", "duration", "APIn", "SPIn"])
+    annual_metrics = annual_metrics.reindex(columns=["site", "year", "taxon", "start_date", "end_date", "peak_date", "peak_conc", "high_days",  "duration", "APIn", "SPIn"])
 
     #Code for splitting up year from month-day
     """

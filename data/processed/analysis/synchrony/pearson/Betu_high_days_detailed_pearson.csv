@@ -1,0 +1,11 @@
+taxon,site_1,site_2,method,n,correlation coefficient,correlation strength,correlation direction,p_value,lower_bound,upper_bound
+Betu,Belfast,Cardiff,pearson,7,0.33,weak correlation,positive,0.47,-0.57,0.87
+Betu,Belfast,Dublin,pearson,7,0.53,moderate correlation,positive,0.22,-0.38,0.92
+Betu,Belfast,Invergowrie,pearson,7,0.97,very strong correlation,positive,0.0,0.83,1.0
+Betu,Belfast,Leicester,pearson,7,0.25,weak correlation,positive,0.59,-0.62,0.84
+Betu,Cardiff,Dublin,pearson,7,0.29,weak correlation,positive,0.52,-0.59,0.86
+Betu,Cardiff,Invergowrie,pearson,7,0.35,weak correlation,positive,0.45,-0.55,0.87
+Betu,Cardiff,Leicester,pearson,7,0.88,strong correlation,positive,0.01,0.37,0.98
+Betu,Dublin,Invergowrie,pearson,7,0.47,moderate correlation,positive,0.29,-0.44,0.9
+Betu,Dublin,Leicester,pearson,7,0.15,weak correlation,positive,0.75,-0.68,0.81
+Betu,Invergowrie,Leicester,pearson,7,0.19,weak correlation,positive,0.68,-0.66,0.83

@@ -1,9 +1,9 @@
 Metric,Betu,Poac
-start_date,29-03-2024,06-01-2024
-end_date,29-05-2024,21-09-2024
-duration,61,259
-APIn,1205,5771
-SPIn,741,5292
+start_date,29-03-2024,31-05-2024
+end_date,30-05-2024,21-09-2024
+duration,62,113
+APIn,1014,5256
+SPIn,748,4309
 peak_conc,119.34,277.576
 peak_date,2024-04-13,2024-06-20
-high_days,1,42
+high_days,2,40

@@ -55,6 +55,7 @@ def data_extraction(df, taxa, year):
     
     #Swap all -1 values for 0 (ignores recording faults)
     filtered_df = filtered_df.replace(-1, np.nan)
+    filtered_df = filtered_df.dropna()
     return filtered_df
 
 

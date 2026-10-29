@@ -7,7 +7,7 @@ def main():
     #Set taxa
     taxa = ["Betu", "Poac"]
     #Metrics
-    metrics = ["APIn", "duration", "start_DOY"]
+    metrics = ["APIn", "duration", "high_days", "start_DOY"]
     #Import annual metrics master table
     annual_metrics = pd.read_csv("data/processed/yearly_metrics/all_annual_metrics.csv")
     #Convert start date to start_DOY (day of year)
@@ -30,23 +30,25 @@ def main():
             #Export Statistical Reports
 
             #Short Pairwise Correlation Matrix 
-            pairwise_pearson.to_csv(f"data/processed/analysis/synchrony/pearson/{taxon}_{metric}_pearson_corrmatrix.csv")
-            pairwise_spearman.to_csv(f"data/processed/analysis/synchrony/spearman/{taxon}_{metric}_spearman_corrmatrix.csv")
+            pairwise_pearson.to_csv(f"data/processed/analysis/synchrony/pearson/{taxon}_{metric}_pearson_corrmatrix.csv", 
+                                    index = False)
+            pairwise_spearman.to_csv(f"data/processed/analysis/synchrony/spearman/{taxon}_{metric}_spearman_corrmatrix.csv", 
+                                     index = False)
 
             #Detailed Pearson
             #Pearson
             pearson_results = pearson_test(metric_site_year_df, taxon)
             pearson_results = pd.DataFrame(pearson_results)
-            pearson_results.to_csv(f"data/processed/analysis/synchrony/pearson/{taxon}_{metric}_detailed_pearson.csv")
+            pearson_results = pearson_results.round(2)
+            pearson_results.to_csv(f"data/processed/analysis/synchrony/pearson/{taxon}_{metric}_detailed_pearson.csv", 
+                                   index = False)
 
-
+            #Spearman
             spearman_results = spearman_test(metric_site_year_df, taxon)
             spearman_results = pd.DataFrame(spearman_results)
-            spearman_results.to_csv(f"data/processed/analysis/synchrony/spearman/{taxon}_{metric}_detailed_spearman.csv")
-            
-
-
-        
+            pearson_results = pearson_results.round(2)
+            spearman_results.to_csv(f"data/processed/analysis/synchrony/spearman/{taxon}_{metric}_detailed_spearman.csv", 
+                                    index = False)
 
 
 #Reshape data to extract APIn per year at each site
@@ -66,12 +68,15 @@ def pearson_test(df, taxon):
         n = len(API_values)
 
         #r = correlation coefficient, p = p-value
-        pearson_result = stats.pearsonr(df[pair[0]], df[pair[1]])
+        pearson_result = stats.pearsonr(API_values[pair[0]], API_values[pair[1]])
         r = pearson_result.statistic
         p = pearson_result.pvalue
         confidence = pearson_result.confidence_interval(confidence_level=0.95)
         ci_low = confidence.low
         ci_high = confidence.high
+
+        corr_strength = correlation_strength(r)
+        corr_direction = correlation_direction(r)
 
         results.append({
             "taxon": taxon,
@@ -79,7 +84,9 @@ def pearson_test(df, taxon):
             "site_2": pair[1],
             "method": "pearson",
             "n": n,
-            "correlation": r,
+            "correlation coefficient": r,
+            "correlation strength": corr_strength,
+            "correlation direction": corr_direction,
             "p_value": p,
             "lower_bound": ci_low,
             "upper_bound": ci_high
@@ -96,11 +103,14 @@ def spearman_test(df, taxon):
         n = len(API_values)
         #Spearman test
         #rho = correlation coefficient, p = p-value
-        spearman_result = stats.spearmanr(df[pair[0]], df[pair[1]])
+        spearman_result = stats.spearmanr(API_values[pair[0]], API_values[pair[1]])
         rho = spearman_result.statistic
         p = spearman_result.pvalue
         ci_low = np.nan
         ci_high = np.nan
+
+        corr_strength = correlation_strength(rho)
+        corr_direction = correlation_direction(rho)
 
         results.append({
             "taxon": taxon,
@@ -109,6 +119,8 @@ def spearman_test(df, taxon):
             "method": "spearman",
             "n": n,
             "correlation": rho,
+            "correlation strength": corr_strength,
+            "correlation direction": corr_direction,
             "p_value": p,
             "lower_bound": ci_low,
             "upper_bound": ci_high
@@ -116,8 +128,26 @@ def spearman_test(df, taxon):
 
     return results
         
-    
+def correlation_strength(r):
+    r = abs(r)
+    if r < 0.1:
+        return "no correlation"
+    elif 0.1 <= r < 0.4:
+        return "weak correlation"
+    elif 0.4 <= r < 0.7:
+        return "moderate correlation"
+    elif 0.7 <= r < 0.9:
+        return "strong correlation"
+    elif 0.9 <= r:
+        return "very strong correlation"
 
+def correlation_direction(r):
+    if r > 0:
+        return "positive"
+    elif r < 0:
+        return "negative"
+    else:
+        return "none"
 
 if __name__ == "__main__":
     main()

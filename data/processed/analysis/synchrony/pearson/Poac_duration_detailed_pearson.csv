@@ -1,11 +1,11 @@
-,taxon,site_1,site_2,method,n,correlation,p_value,lower_bound,upper_bound
-0,Poac,Belfast,Cardiff,pearson,7,0.9713348179780745,0.0002631107533451247,0.8128625403804586,0.995911781399769
-1,Poac,Belfast,Dublin,pearson,7,0.11411065431107108,0.8075385084986768,-0.6990151964806558,0.798547976056219
-2,Poac,Belfast,Invergowrie,pearson,7,-0.11288135039702511,0.8095852456769325,-0.7980963120249002,0.699651484395191
-3,Poac,Belfast,Leicester,pearson,7,0.8611788522568229,0.012779277002798966,0.30761363665251107,0.9792051026792342
-4,Poac,Cardiff,Dublin,pearson,7,0.18785952158954788,0.6866773929227054,-0.6583322878401482,0.8243040491883068
-5,Poac,Cardiff,Invergowrie,pearson,7,0.044239036155659446,0.924970949364331,-0.7332468737955606,0.7715918971661584
-6,Poac,Cardiff,Leicester,pearson,7,0.824648086399988,0.022447301924531385,0.18889571176001113,0.9732871552937384
-7,Poac,Dublin,Invergowrie,pearson,7,0.12674810891499047,0.7865499506047012,-0.6923985343930378,0.8031468979756771
-8,Poac,Dublin,Leicester,pearson,7,-0.3593561453292487,0.42855357922748716,-0.8754920469278828,0.5397732827900398
-9,Poac,Invergowrie,Leicester,pearson,7,-0.11954513927594414,0.7985009101200015,-0.8005354920210366,0.6961867939621535
+taxon,site_1,site_2,method,n,correlation coefficient,correlation strength,correlation direction,p_value,lower_bound,upper_bound
+Poac,Belfast,Cardiff,pearson,7,0.97,very strong correlation,positive,0.0,0.81,1.0
+Poac,Belfast,Dublin,pearson,7,0.8,strong correlation,positive,0.03,0.11,0.97
+Poac,Belfast,Invergowrie,pearson,7,-0.11,weak correlation,negative,0.81,-0.8,0.7
+Poac,Belfast,Leicester,pearson,7,0.86,strong correlation,positive,0.01,0.31,0.98
+Poac,Cardiff,Dublin,pearson,7,0.82,strong correlation,positive,0.02,0.17,0.97
+Poac,Cardiff,Invergowrie,pearson,7,0.04,no correlation,positive,0.92,-0.73,0.77
+Poac,Cardiff,Leicester,pearson,7,0.82,strong correlation,positive,0.02,0.19,0.97
+Poac,Dublin,Invergowrie,pearson,7,-0.09,no correlation,negative,0.85,-0.79,0.71
+Poac,Dublin,Leicester,pearson,7,0.47,moderate correlation,positive,0.28,-0.43,0.9
+Poac,Invergowrie,Leicester,pearson,7,-0.12,weak correlation,negative,0.8,-0.8,0.7
