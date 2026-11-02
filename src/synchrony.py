@@ -7,14 +7,15 @@ def main():
     #Set taxa
     taxa = ["Betu", "Poac"]
     #Metrics
-    metrics = ["APIn", "duration", "high_days", "start_DOY"]
+    metrics = ["APIn", "duration", "high_days", "start_DOY", "end_DOY"]
     #Import annual metrics master table
     annual_metrics = pd.read_csv("data/processed/yearly_metrics/all_annual_metrics.csv")
-    #Convert start date to start_DOY (day of year)
+    #Convert start and end date to start_DOY and end_DOY (day of year)
     annual_metrics["start_date"] = pd.to_datetime(annual_metrics["start_date"], format="%Y-%m-%d")
+    annual_metrics["end_date"] = pd.to_datetime(annual_metrics["end_date"], format="%Y-%m-%d")
     #Extract day of year from datetime series
     annual_metrics["start_DOY"] =annual_metrics["start_date"].dt.dayofyear
-
+    annual_metrics["end_DOY"] =annual_metrics["end_date"].dt.dayofyear
 
 
     results = {}

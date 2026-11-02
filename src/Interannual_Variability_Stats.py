@@ -18,7 +18,8 @@ IAV_stats = grouped_annual_metrics.agg({
     "APIn": ["mean", "std"],
     "duration": ["mean", "std"],
     "high_days": ["mean", "std"],
-    "start_date_DOY": "std"
+    "start_date_DOY": "std",
+    "end_date_DOY": "std"
 })
 
 #Reformat column names
@@ -35,7 +36,7 @@ IAV_stats = IAV_stats.reindex(columns = ["site", "taxon",
                               "mean_APIn", "std_APIn", "%CV_APIn",
                               "mean_duration", "std_duration", "%CV_duration",
                               "mean_high_days", "std_high_days", "%CV_high_days",
-                              "std_start_date_DOY"])
+                              "std_start_date_DOY", "std_end_date_DOY"])
 
 #Round values
 IAV_stats = IAV_stats.round(2)

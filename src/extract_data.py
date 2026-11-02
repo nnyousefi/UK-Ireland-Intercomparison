@@ -24,6 +24,10 @@ def main():
             file = pd.read_excel(file_path, sheet_name=location, skiprows=2)
             #Create new filtered dataframe which extracts dates and pollen taxa for that year and location
             filtered_df = data_extraction(file, pollen_taxa, year)
+            #Swap all -1 values (recording faults) for NA
+            filtered_df = filtered_df.replace(-1, np.nan)
+            #Remove recording faults
+            filtered_df = filtered_df.dropna()
             #Append Yearly Taxa Counts to Temp DB
             location_df = pd.concat([filtered_df, location_df])
         #Export final location dataframe
@@ -52,10 +56,7 @@ def data_extraction(df, taxa, year):
         (df["Date"] >= start_date) & (df["Date"] < end_date),
         columns
     ].copy()
-    
-    #Swap all -1 values for 0 (ignores recording faults)
-    filtered_df = filtered_df.replace(-1, np.nan)
-    filtered_df = filtered_df.dropna()
+
     return filtered_df
 
 

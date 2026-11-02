@@ -1,0 +1,11 @@
+taxon,site_1,site_2,method,n,correlation,correlation strength,correlation direction,p_value,lower_bound,upper_bound
+Poac,Belfast,Cardiff,spearman,7,0.7748062179181807,strong correlation,positive,0.04076946252042035,,
+Poac,Belfast,Dublin,spearman,7,0.2882999880625789,weak correlation,positive,0.5306506599466652,,
+Poac,Belfast,Invergowrie,spearman,7,-0.18181818181818182,weak correlation,negative,0.6964123552778355,,
+Poac,Belfast,Leicester,spearman,7,0.6306562238868914,moderate correlation,positive,0.1288876956849579,,
+Poac,Cardiff,Dublin,spearman,7,0.6785714285714287,moderate correlation,positive,0.0937502539598313,,
+Poac,Cardiff,Invergowrie,spearman,7,0.03603749850782236,no correlation,positive,0.938860561394214,,
+Poac,Cardiff,Leicester,spearman,7,0.642857142857143,moderate correlation,positive,0.11939237342741099,,
+Poac,Dublin,Invergowrie,spearman,7,-0.12613124477737828,weak correlation,negative,0.7875721594074739,,
+Poac,Dublin,Leicester,spearman,7,0.21428571428571433,weak correlation,positive,0.6445115810207203,,
+Poac,Invergowrie,Leicester,spearman,7,-0.36037498507822363,weak correlation,negative,0.4271488085609062,,

@@ -1,6 +1,6 @@
-site,taxon,mean_APIn,std_APIn,%CV_APIn,mean_duration,std_duration,%CV_duration,mean_high_days,std_high_days,%CV_high_days,std_start_date_DOY
-Belfast,Betu,386.43,393.73,101.89,37.29,27.72,74.35,0.86,1.86,217.52,6.07
-Cardiff,Betu,2949.29,1168.43,39.62,24.0,8.7,36.24,10.29,5.28,51.36,6.75
-Dublin,Betu,2392.29,2137.32,89.34,50.29,28.21,56.09,8.71,8.1,92.92,38.17
-Invergowrie,Betu,555.0,468.26,84.37,20.14,9.69,48.08,1.29,2.14,166.3,5.65
-Leicester,Betu,4054.71,1029.42,25.39,24.0,8.16,34.02,13.29,6.26,47.15,7.85
+site,taxon,mean_APIn,std_APIn,%CV_APIn,mean_duration,std_duration,%CV_duration,mean_high_days,std_high_days,%CV_high_days,std_start_date_DOY,std_end_date_DOY
+Belfast,Betu,386.43,393.73,101.89,37.29,27.72,74.35,0.86,1.86,217.52,6.07,25.57
+Cardiff,Betu,2949.29,1168.43,39.62,24.0,8.7,36.24,10.29,5.28,51.36,6.75,6.5
+Dublin,Betu,2392.29,2137.32,89.34,50.29,28.21,56.09,8.71,8.1,92.92,38.17,59.9
+Invergowrie,Betu,555.0,468.26,84.37,20.14,9.69,48.08,1.29,2.14,166.3,5.65,7.65
+Leicester,Betu,4054.71,1029.42,25.39,24.0,8.16,34.02,13.29,6.26,47.15,7.85,5.97

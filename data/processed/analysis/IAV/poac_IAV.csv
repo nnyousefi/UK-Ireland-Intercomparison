@@ -1,6 +1,6 @@
-site,taxon,mean_APIn,std_APIn,%CV_APIn,mean_duration,std_duration,%CV_duration,mean_high_days,std_high_days,%CV_high_days,std_start_date_DOY
-Belfast,Poac,1165.43,519.35,44.56,60.29,10.53,17.47,4.71,4.86,102.99,8.46
-Cardiff,Poac,4081.14,471.98,11.56,56.0,12.38,22.11,26.57,4.16,15.65,6.18
-Dublin,Poac,5236.57,5782.6,110.43,72.29,23.71,32.8,26.14,20.19,77.25,18.71
-Invergowrie,Poac,1474.86,270.8,18.36,46.57,12.78,27.44,7.71,3.3,42.81,5.32
-Leicester,Poac,5229.29,747.03,14.29,63.0,12.11,19.22,30.57,3.87,12.65,5.71
+site,taxon,mean_APIn,std_APIn,%CV_APIn,mean_duration,std_duration,%CV_duration,mean_high_days,std_high_days,%CV_high_days,std_start_date_DOY,std_end_date_DOY
+Belfast,Poac,1165.43,519.35,44.56,60.29,10.53,17.47,4.71,4.86,102.99,8.46,7.3
+Cardiff,Poac,4081.14,471.98,11.56,56.0,12.38,22.11,26.57,4.16,15.65,6.18,9.51
+Dublin,Poac,5236.57,5782.6,110.43,72.29,23.71,32.8,26.14,20.19,77.25,18.71,26.89
+Invergowrie,Poac,1474.86,270.8,18.36,46.57,12.78,27.44,7.71,3.3,42.81,5.32,11.25
+Leicester,Poac,5229.29,747.03,14.29,63.0,12.11,19.22,30.57,3.87,12.65,5.71,8.68
