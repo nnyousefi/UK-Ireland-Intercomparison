@@ -32,9 +32,9 @@ def main():
 
             #Short Pairwise Correlation Matrix 
             pairwise_pearson.to_csv(f"data/processed/analysis/synchrony/pearson/{taxon}_{metric}_pearson_corrmatrix.csv", 
-                                    index = False)
+                                    index = True)
             pairwise_spearman.to_csv(f"data/processed/analysis/synchrony/spearman/{taxon}_{metric}_spearman_corrmatrix.csv", 
-                                     index = False)
+                                     index = True)
 
             #Detailed Pearson
             #Pearson
