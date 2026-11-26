@@ -18,7 +18,7 @@ def main():
 
     for location in locations:
         #Identify file path
-        file_path = f"data/processed/{location}_allyears.csv"
+        file_path = f"data/processed/all_years/{location}_allyears.csv"
         #Import concentration data for that location
         conc_data = pd.read_csv(file_path)
         #Ensure correct datetime formatting
@@ -30,6 +30,9 @@ def main():
                 conc_data["Date"].dt.year == int(year)]
             #Loop by taxa
             for taxon in taxa:
+                taxon_specific_df = yearly_conc_data[["Date", taxon]]
+                taxon_specific_df = taxon_specific_df.dropna()
+
                 #Identify threshold for "High Days"
                 if taxon == "Betu":
                     high_days_threshold = 80
@@ -37,9 +40,9 @@ def main():
                     high_days_threshold = 50
 
                 #Calculate APIn; Season Start, End and Duration; and SPIn
-                season_data = season_metrics(yearly_conc_data, taxon, integral_option="both")
+                season_data = season_metrics(taxon_specific_df, taxon, integral_option="APIn")
                 #Calculate Peak Concentration, Date for Peak Conc, Number of High Days
-                peak_data = peak_metrics(yearly_conc_data, taxon, high_days_threshold)
+                peak_data = peak_metrics(taxon_specific_df, taxon, high_days_threshold)
 
                 #Combine calculated metrics + remove taxon
                 combined_metrics = {
@@ -54,7 +57,7 @@ def main():
                 #Merge combined metrics per site and year into master df
                 annual_metrics = pd.concat([annual_metrics, combined_metrics], ignore_index=True)
 
-    annual_metrics = annual_metrics.reindex(columns=["site", "year", "taxon", "start_date", "end_date", "peak_date", "peak_conc", "high_days",  "duration", "APIn", "SPIn"])
+    annual_metrics = annual_metrics.reindex(columns=["site", "year", "taxon", "start_date", "end_date", "peak_date", "peak_conc", "high_days",  "duration", "APIn"])
 
     #Code for splitting up year from month-day
     """

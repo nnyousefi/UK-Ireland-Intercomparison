@@ -3,9 +3,9 @@ Poac,Belfast,Cardiff,pearson,7,0.97,very strong correlation,positive,0.0,0.81,1.
 Poac,Belfast,Dublin,pearson,7,0.8,strong correlation,positive,0.03,0.11,0.97
 Poac,Belfast,Invergowrie,pearson,7,-0.11,weak correlation,negative,0.81,-0.8,0.7
 Poac,Belfast,Leicester,pearson,7,0.86,strong correlation,positive,0.01,0.31,0.98
-Poac,Cardiff,Dublin,pearson,7,0.82,strong correlation,positive,0.02,0.17,0.97
+Poac,Cardiff,Dublin,pearson,7,0.82,strong correlation,positive,0.02,0.18,0.97
 Poac,Cardiff,Invergowrie,pearson,7,0.04,no correlation,positive,0.92,-0.73,0.77
 Poac,Cardiff,Leicester,pearson,7,0.82,strong correlation,positive,0.02,0.19,0.97
 Poac,Dublin,Invergowrie,pearson,7,-0.09,no correlation,negative,0.85,-0.79,0.71
-Poac,Dublin,Leicester,pearson,7,0.47,moderate correlation,positive,0.28,-0.43,0.9
+Poac,Dublin,Leicester,pearson,7,0.47,moderate correlation,positive,0.29,-0.44,0.9
 Poac,Invergowrie,Leicester,pearson,7,-0.12,weak correlation,negative,0.8,-0.8,0.7

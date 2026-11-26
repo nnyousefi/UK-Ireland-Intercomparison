@@ -26,12 +26,10 @@ def main():
             filtered_df = data_extraction(file, pollen_taxa, year)
             #Swap all -1 values (recording faults) for NA
             filtered_df = filtered_df.replace(-1, np.nan)
-            #Remove recording faults
-            filtered_df = filtered_df.dropna()
             #Append Yearly Taxa Counts to Temp DB
             location_df = pd.concat([filtered_df, location_df])
         #Export final location dataframe
-        location_df.to_csv(f"data/processed/{location}_allyears.csv", index=False)
+        location_df.to_csv(f"data/processed/all_years/{location}_allyears.csv", index=False)
 
 
 

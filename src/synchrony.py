@@ -24,7 +24,7 @@ def main():
             #Reformat dataframe to extract APIn per year at each site
             metric_site_year_df = site_by_year(annual_metrics, metric, taxon)
             #Calculate pairwise correlations
-            ##Correlation Matrices
+            #Now#Correlation Matrices
             pairwise_pearson = metric_site_year_df.corr(method="pearson", min_periods=5)
             pairwise_spearman = metric_site_year_df.corr(method="spearman", min_periods=5)
             

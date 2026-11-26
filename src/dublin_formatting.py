@@ -28,11 +28,12 @@ def main():
         #If the date column is already named correctly
         if "Date" in data.columns:
             #Reformat Only
-            data["Date"] = pd.to_datetime(data["Date"], format="mixed")
+            data["Date"] = pd.to_datetime(data["Date"], format="mixed", dayfirst=True, errors="coerce")
         #If date column is not named correctly
         elif "Day" in data.columns:
             #Create new, correctly named column and then reformat
-            data["Date"] = pd.to_datetime(data["Day"], format="mixed")
+            data["Date"] = pd.to_datetime(data["Day"], format="mixed", dayfirst=True, errors="coerce")
+
         #Dataset cleaning
         #Capitalise columns
         data.columns = data.columns.str.capitalize()
@@ -42,9 +43,10 @@ def main():
         #Check if current file has multiple years
         years = data["Date"].dt.year.dropna().astype(int).unique()
         for year in years:
-        
             ##Extract data
             filtered_df = data_extraction(data, taxa, year)
+            ##Set Empty Cells as NaN
+            filtered_df.replace("", np.nan)
             ##Clean date column
             filtered_df["Date"] = filtered_df["Date"].dt.strftime("%Y-%m-%d")
             ##Shorten column names (match that of MetOffice data)
@@ -53,7 +55,7 @@ def main():
 
 
     #Export final dataframe
-    location_df.to_csv(f"data/processed/Dublin_allyears.csv", index=False)
+    location_df.to_csv(f"data/processed/all_years/Dublin_allyears.csv", index=False)
 
 main()
     

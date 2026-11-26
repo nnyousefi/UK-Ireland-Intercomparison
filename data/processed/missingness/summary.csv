@@ -1,0 +1,11 @@
+Site,Taxon,Mean missingness (%),SD missingness (%),Minimum missingness (%),Maximum missingness (%)
+Belfast,Betu,20.69,8.89,14.95,40.65
+Belfast,Poac,20.62,8.93,14.95,40.65
+Cardiff,Betu,17.96,1.94,14.95,19.63
+Cardiff,Poac,17.96,1.94,14.95,19.63
+Dublin,Betu,26.3,25.36,0.0,65.89
+Dublin,Poac,21.03,21.9,0.0,65.89
+Invergowrie,Betu,23.03,3.92,18.69,28.5
+Invergowrie,Poac,23.03,3.92,18.69,28.5
+Leicester,Betu,17.62,1.45,14.95,19.63
+Leicester,Poac,17.62,1.45,14.95,19.63

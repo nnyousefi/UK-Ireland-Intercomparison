@@ -1,11 +1,11 @@
 taxon,site_1,site_2,method,n,correlation coefficient,correlation strength,correlation direction,p_value,lower_bound,upper_bound
 Poac,Belfast,Cardiff,pearson,7,0.77,strong correlation,positive,0.04,0.04,0.96
-Poac,Belfast,Dublin,pearson,7,0.43,moderate correlation,positive,0.34,-0.48,0.89
+Poac,Belfast,Dublin,pearson,7,0.43,moderate correlation,positive,0.33,-0.48,0.89
 Poac,Belfast,Invergowrie,pearson,7,0.76,strong correlation,positive,0.05,0.01,0.96
 Poac,Belfast,Leicester,pearson,7,0.79,strong correlation,positive,0.03,0.09,0.97
-Poac,Cardiff,Dublin,pearson,7,0.69,moderate correlation,positive,0.09,-0.14,0.95
+Poac,Cardiff,Dublin,pearson,7,0.69,moderate correlation,positive,0.09,-0.13,0.95
 Poac,Cardiff,Invergowrie,pearson,7,0.68,moderate correlation,positive,0.09,-0.15,0.95
 Poac,Cardiff,Leicester,pearson,7,0.8,strong correlation,positive,0.03,0.12,0.97
 Poac,Dublin,Invergowrie,pearson,7,0.26,weak correlation,positive,0.57,-0.61,0.85
-Poac,Dublin,Leicester,pearson,7,0.71,strong correlation,positive,0.08,-0.1,0.95
+Poac,Dublin,Leicester,pearson,7,0.72,strong correlation,positive,0.07,-0.08,0.95
 Poac,Invergowrie,Leicester,pearson,7,0.68,moderate correlation,positive,0.09,-0.15,0.95

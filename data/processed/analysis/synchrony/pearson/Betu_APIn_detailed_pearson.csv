@@ -1,11 +1,11 @@
 taxon,site_1,site_2,method,n,correlation coefficient,correlation strength,correlation direction,p_value,lower_bound,upper_bound
 Betu,Belfast,Cardiff,pearson,7,0.17,weak correlation,positive,0.72,-0.67,0.82
-Betu,Belfast,Dublin,pearson,7,0.82,strong correlation,positive,0.02,0.18,0.97
+Betu,Belfast,Dublin,pearson,7,0.8,strong correlation,positive,0.03,0.11,0.97
 Betu,Belfast,Invergowrie,pearson,7,0.91,very strong correlation,positive,0.0,0.48,0.99
 Betu,Belfast,Leicester,pearson,7,0.24,weak correlation,positive,0.6,-0.62,0.84
-Betu,Cardiff,Dublin,pearson,7,0.36,weak correlation,positive,0.43,-0.54,0.88
+Betu,Cardiff,Dublin,pearson,7,0.37,weak correlation,positive,0.41,-0.53,0.88
 Betu,Cardiff,Invergowrie,pearson,7,0.02,no correlation,positive,0.96,-0.74,0.76
 Betu,Cardiff,Leicester,pearson,7,0.72,strong correlation,positive,0.07,-0.07,0.96
-Betu,Dublin,Invergowrie,pearson,7,0.62,moderate correlation,positive,0.14,-0.26,0.94
-Betu,Dublin,Leicester,pearson,7,0.18,weak correlation,positive,0.69,-0.66,0.82
+Betu,Dublin,Invergowrie,pearson,7,0.57,moderate correlation,positive,0.19,-0.33,0.92
+Betu,Dublin,Leicester,pearson,7,0.17,weak correlation,positive,0.72,-0.67,0.82
 Betu,Invergowrie,Leicester,pearson,7,0.21,weak correlation,positive,0.65,-0.65,0.83
